@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341ea00b1bb6f254bbad17d47c763a4e, type: 3}
+  m_Name: 2_potatoItemData
+  m_EditorClassIdentifier: 
+  <_itemID>k__BackingField: 2
+  <_itemName>k__BackingField: Potato
+  <_itemType>k__BackingField: 0
+  <_maxAmount>k__BackingField: 5
+  <_itemSprite>k__BackingField: {fileID: 21300030, guid: 142ff8784e552734f9d6a895491d0ae8, type: 3}
+  <_groundItem>k__BackingField: {fileID: 4317000517138061962, guid: 90a650dd7f0016942937e3868058f63e, type: 3}

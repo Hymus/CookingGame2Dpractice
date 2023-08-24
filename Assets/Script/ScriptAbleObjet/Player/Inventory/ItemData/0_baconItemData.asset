@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341ea00b1bb6f254bbad17d47c763a4e, type: 3}
+  m_Name: 0_baconItemData
+  m_EditorClassIdentifier: 
+  <_itemID>k__BackingField: 0
+  <_itemName>k__BackingField: Bacon
+  <_itemType>k__BackingField: 0
+  <_maxAmount>k__BackingField: 5
+  <_itemSprite>k__BackingField: {fileID: 21300038, guid: 142ff8784e552734f9d6a895491d0ae8, type: 3}
+  <_groundItem>k__BackingField: {fileID: 3451444485135718129, guid: 4afb61b091b9c65469e40c87f36dddb0, type: 3}

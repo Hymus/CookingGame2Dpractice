@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19f667e79536c441a8ad71a8f3424a0, type: 3}
+  m_Name: RestaurantNPCWaitForFoodState_1
+  m_EditorClassIdentifier: 
+  <_likedFood>k__BackingField:
+  - {fileID: 11400000, guid: 68a0237542604614fa1968a222be33c8, type: 2}
+  - {fileID: 11400000, guid: aecc108348a67314ca8438571c3afd2b, type: 2}
+  - {fileID: 11400000, guid: 21d3b0097343bde4ca89166f5bbd9a27, type: 2}
+  <_minMaxCanWaitTime>k__BackingField: {x: 30, y: 50}

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c047dd517898745b59265a38333855, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  <_moveSpeed>k__BackingField: 5
+  <_jumpForce>k__BackingField: 10
+  <_audioData>k__BackingField: {fileID: 11400000, guid: 15f57a01d4f08a044a6dbd31310483eb, type: 2}
