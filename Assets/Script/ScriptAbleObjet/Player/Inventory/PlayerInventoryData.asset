@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerInventoryData
   m_EditorClassIdentifier: 
   <_maxSlots>k__BackingField: 5
-  <_money>k__BackingField: 296
+  <_money>k__BackingField: 500

@@ -16,6 +16,9 @@ MonoBehaviour:
   <_foodName>k__BackingField: Beer
   <_foodPrice>k__BackingField: 5
   <_foodSprite>k__BackingField: {fileID: 21300000, guid: e0a7fb47c7111464f866363e7a3f47da, type: 3}
+  <_foodMaterials>k__BackingField:
+  - {fileID: 11400000, guid: a67b6a35899f562488178d1e15bd16bc, type: 2}
+  <_materialRequireAmount>k__BackingField: 03000000
   <_groundItem>k__BackingField: {fileID: 2195093386473061978, guid: 25239bfb4c1a13748a3176a74ae5b575, type: 3}
   <_cookingTime>k__BackingField: 2
   <_foodLifeTime>k__BackingField: 30

@@ -29,7 +29,7 @@ public class KitchenWindowScript : DynamicUIwindowScript
         for(int i = 0; i < cookAbleFoodData.Length; i++) //loop to add new menu by DataGroup that store in kitchen
         {
             GameObject menuButtonOBJ = Instantiate(menuButtonPrefab, menuListWindow); //make new menubutton to be child of content menu
-            MenuButtonScript menuButtonScript = menuButtonOBJ.GetComponent<MenuButtonScript>(); //fetch menuButton from the button obj that just create
+            CookFoodMenuButtonScript menuButtonScript = menuButtonOBJ.GetComponent<CookFoodMenuButtonScript>(); //fetch menuButton from the button obj that just create
 
             menuButtonScript.SetMenuButton(_kitchenScript, cookAbleFoodData[i]); //give ref of kitchen and foodData to menuScript
             menuButtonScript.OnCookingFood += ClosingKitchenWindow; // subscript Disable window to event when press button to cook food

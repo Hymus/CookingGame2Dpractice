@@ -19,7 +19,13 @@ public class KitchenScript : MonoBehaviour
     bool isCooking; //check that is cooking or not
 
     float cookingCountTime; //time that start cooking
-
+    private void Awake()
+    {
+        foreach(var food in _cookAbleFoods)
+        {
+            food.InitMaterialDictionary();
+        }
+    }
     private void Start()
     {
         player = PlayerRestaurant.Instance;
@@ -90,6 +96,7 @@ public class KitchenScript : MonoBehaviour
             if (isCooking) return; //if is cooking will cant open to make new food
             kitchenWindowScript.SetKitchenScriptForMenuButton(this, _cookAbleFoods);
 
+            Debug.Log("player is " + player);
             if (Vector2.Distance(transform.position, player.transform.position) < 2) //check if player is near will open kitchen window
             {
                 kitchenWindowScript.CloseAndOpenWindow();

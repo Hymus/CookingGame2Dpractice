@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class MenuButtonScript : MonoBehaviour
+public class CookFoodMenuButtonScript : MonoBehaviour
 {
     public event Action OnCookingFood; //event that will invoke subscript method when click cook button
 
@@ -14,6 +14,8 @@ public class MenuButtonScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI menuName; //name of food of this button
     [SerializeField] private TextMeshProUGUI menuPrice; //show price of this food
     [SerializeField] GameObject moneypaidParticlePrefab; //particle of money that will show when make food
+    [SerializeField] GameObject materialRequireIMGPrefab; //prefab image of material require to make this food
+    [SerializeField] Transform materialIMGparent; //parent of material require img
 
     KitchenScript kitchenScript; //store kitchen script
     PlayerInventoryScript inventoryScript; //ref inventory to fetch inventory data 
@@ -41,6 +43,12 @@ public class MenuButtonScript : MonoBehaviour
             return;
         }
 
+        if(!foodData.CanCook(inventoryScript._inventoryItems))
+        {
+            Debug.Log($"{foodData._foodName} can't cook cuz material is not enough");
+            return;
+        }
+        Debug.Log($"{foodData._foodName} can cook");
         GameObject paidMoneyParticle = Instantiate(moneypaidParticlePrefab, kitchenScript.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         MoneyParticle moneyParticle = paidMoneyParticle.GetComponent<MoneyParticle>(); //fetch script from prticle obj
         moneyParticle.SetAmountOfGold("-" + foodData._foodPrice.ToString("F0")); //give amount of money that paid
@@ -55,5 +63,15 @@ public class MenuButtonScript : MonoBehaviour
         buttonImage.sprite = foodData._foodSprite;
         menuName.text = foodData._foodName;
         menuPrice.text = foodData._foodPrice.ToString("F0");
+
+        foreach(Transform img in materialIMGparent)
+        {
+            Destroy(img.gameObject);
+        }    
+        for(int i = 0; i < foodData._foodMaterials.Length; i++)
+        { 
+            GameObject imgMaterial = Instantiate(materialRequireIMGPrefab, materialIMGparent);
+            imgMaterial.GetComponent<MaterialToCookImageControl>().InitMaterialRequireImage(foodData._foodMaterials[i]._itemSprite, foodData._materialRequireAmount[i]);
+        }
     }
 }

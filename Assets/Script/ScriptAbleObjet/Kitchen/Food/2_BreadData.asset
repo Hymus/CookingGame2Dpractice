@@ -16,6 +16,10 @@ MonoBehaviour:
   <_foodName>k__BackingField: Bread
   <_foodPrice>k__BackingField: 4
   <_foodSprite>k__BackingField: {fileID: 21300000, guid: c728868677dfad541b6543a1f2aec055, type: 3}
+  <_foodMaterials>k__BackingField:
+  - {fileID: 11400000, guid: ef3bdd84efaacaf499add964e8fc4f93, type: 2}
+  - {fileID: 11400000, guid: 178263f9de64a1644a7e79490fc77394, type: 2}
+  <_materialRequireAmount>k__BackingField: 0200000001000000
   <_groundItem>k__BackingField: {fileID: 2939238837715332936, guid: 8d97b9c0cb161ef4d978c185f1e3cf7c, type: 3}
   <_cookingTime>k__BackingField: 2
   <_foodLifeTime>k__BackingField: 50

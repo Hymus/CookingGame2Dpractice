@@ -16,6 +16,10 @@ MonoBehaviour:
   <_foodName>k__BackingField: Steak
   <_foodPrice>k__BackingField: 10
   <_foodSprite>k__BackingField: {fileID: 21300042, guid: 142ff8784e552734f9d6a895491d0ae8, type: 3}
+  <_foodMaterials>k__BackingField:
+  - {fileID: 11400000, guid: 67899e28598d3d8408bbec3eb47167b5, type: 2}
+  - {fileID: 11400000, guid: ef3bdd84efaacaf499add964e8fc4f93, type: 2}
+  <_materialRequireAmount>k__BackingField: 0100000002000000
   <_groundItem>k__BackingField: {fileID: 5552554592920123325, guid: 2ee67d8b495abcb4c8ed6f9af85571a5, type: 3}
   <_cookingTime>k__BackingField: 5
   <_foodLifeTime>k__BackingField: 25
