@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Linq;
 
 public class CookFoodMenuButtonScript : MonoBehaviour
 {
@@ -54,6 +55,15 @@ public class CookFoodMenuButtonScript : MonoBehaviour
         moneyParticle.SetAmountOfGold("-" + foodData._foodPrice.ToString("F0")); //give amount of money that paid
 
         inventoryData.DecreaseMoney(foodData._foodPrice);
+        
+        for(int i = 0; i < foodData._foodMaterials.Length; i++)
+        {
+            ItemData mat = foodData._foodMaterials[i];
+            ItemData matToRemove = inventoryScript._inventoryItems.FirstOrDefault(it => it._itemID == mat._itemID);
+            Debug.Log($"{i+1} item data to remove is {matToRemove._itemName} remove amount is {foodData._materialRequireAmount[i]}");
+            inventoryScript.RemoveItem(inventoryScript._inventoryItems.IndexOf(matToRemove), false, foodData._materialRequireAmount[i]);
+        }
+
         kitchenScript.InitialCooking(foodData); //put food data that will cook to kitchen
         OnCookingFood?.Invoke(); // invoke method that subscript in this event like close kitchen window
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class PlayerInventoryScript : MonoBehaviour
 {
@@ -66,16 +67,30 @@ public class PlayerInventoryScript : MonoBehaviour
         _inventoryItems.Add(Instantiate(itemData));
         OnInventoryChange?.Invoke();
     }
-    public void RemoveItem(int itemIndexInList, bool removeAll)
+    public void RemoveItem(int itemIndexInList, bool removeAll, int removeAmount = 1) //take itemIndex to remove correct item in list and bool remove all to check if it remove all item and amount to remove is amount to remove this item if no input will set default 1
     {
-        if(_inventoryItems[itemIndexInList]._currentAmount <= 1 || removeAll)
+        if((_inventoryItems[itemIndexInList]._currentAmount <= 1 && removeAmount == 1) || removeAll || (removeAmount == _inventoryItems[itemIndexInList]._currentAmount))
         {
+            Debug.Log($"{_inventoryItems[itemIndexInList]._itemName} is remove all at first if and removeAmount amount is {removeAmount} and cur amount is { _inventoryItems[itemIndexInList]._currentAmount}");
             _inventoryItems.RemoveAt(itemIndexInList);
             OnInventoryChange?.Invoke();
             return;
         }
 
-        _inventoryItems[itemIndexInList].RemoveItemAmount(1);
+        if (removeAmount < _inventoryItems[itemIndexInList]._currentAmount) // if amount to remove is less than _current amount of this item will remove this amount
+        {
+            //Debug.Log($"{_inventoryItems[itemIndexInList]._itemName} is remove all at second if");
+            _inventoryItems[itemIndexInList].RemoveItemAmount(removeAmount); //remove item by amount that input but if no input will set default as 1
+            OnInventoryChange?.Invoke();
+            return;
+        }
+        //down here mean remove amount is more than current amount of this item must remove this and remove next item more
+        int removeAmountLeft = removeAmount - _inventoryItems[itemIndexInList]._currentAmount;
+        int itemIDtoRemoveNext = _inventoryItems[itemIndexInList]._itemID; //use to find next item to remove after remove all this item
+        _inventoryItems.RemoveAt(itemIndexInList); //remove all item cuz it not have all item it require
+        //Debug.Log($"item {_inventoryItems[itemIndexInList]} must remove next item amout to remove next is {removeAmountLeft}");
         OnInventoryChange?.Invoke();
+        ItemData nextItemToRemove = _inventoryItems.FirstOrDefault(it => it._itemID == itemIDtoRemoveNext); //find itemdata to remove next by same item ID
+        RemoveItem(_inventoryItems.IndexOf(nextItemToRemove), false, removeAmountLeft); //remove this item by recursion method
     }
 }

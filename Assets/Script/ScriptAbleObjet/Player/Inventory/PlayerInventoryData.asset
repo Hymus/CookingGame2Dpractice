@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2ff0b91e5b6084c89973e72ca7cd83, type: 3}
   m_Name: PlayerInventoryData
   m_EditorClassIdentifier: 
-  <_maxSlots>k__BackingField: 5
-  <_money>k__BackingField: 500
+  <_maxSlots>k__BackingField: 10
+  <_money>k__BackingField: 300

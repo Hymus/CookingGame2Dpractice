@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ESCwindowScript : StaticUIwindowScript
 {
+    [SerializeField] GameObject loadSceneCurtainOBj;
+
     protected override void Awake()
     {
         base.Awake();
@@ -23,5 +26,19 @@ public class ESCwindowScript : StaticUIwindowScript
         }
 
         base.CloseAndOpenWindowStopTime();
+    }
+
+    public void MainMenuButton()
+    {
+        Debug.Log("MainMenuButton press");
+        Invoke(nameof(LoadMainMenu), 2);
+        loadSceneCurtainOBj.SetActive(true);
+        loadSceneCurtainOBj.GetComponent<Animator>().SetBool("CloseScene", true);
+        Time.timeScale = 1;
+    }
+
+    void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

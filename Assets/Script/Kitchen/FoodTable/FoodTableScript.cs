@@ -84,7 +84,7 @@ public class FoodTableScript : MonoBehaviour
         switch(_foodDataOntable._foodQuality)
         {
             case FoodQuality.Good:
-                foodPrice += foodPrice * 0.2f; // get benefit 20 percent if food is good quality
+                foodPrice += foodPrice * 0.8f; // get benefit 80 percent if food is good quality
                 break;
             case FoodQuality.Bad:
                 foodPrice -= foodPrice * 0.2f; // get less money 20 percent if it bad quality

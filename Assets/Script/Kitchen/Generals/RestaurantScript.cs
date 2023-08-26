@@ -25,8 +25,8 @@ public class RestaurantScript : MonoBehaviour
         _restaurantData.CalculateAverageStar();
         starScore.fillAmount = (float)((_restaurantData._avarageStar * 100) / 5) / 100;
 
-        _customerSpawner.SetMinMaxSpawnTime(new Vector2(15 - (_restaurantData._avarageStar * 2),
-            70 - (_restaurantData._avarageStar * 10))); //check if restautant has star low or high if low customer will barely spawn if hight customer will often spawn 
+        _customerSpawner.SetMinMaxSpawnTime(new Vector2(20 - (_restaurantData._avarageStar * 2),
+            80 - (_restaurantData._avarageStar * 10))); //check if restautant has star low or high if low customer will barely spawn if hight customer will often spawn 
 
         OnUpdateRestaurantStarScore?.Invoke();
     }

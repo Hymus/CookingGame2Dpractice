@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19f667e79536c441a8ad71a8f3424a0, type: 3}
   m_Name: RestaurantNPCWaitForFoodState_1
   m_EditorClassIdentifier: 
+  <_stateAudio>k__BackingField: {fileID: 0}
   <_likedFood>k__BackingField:
   - {fileID: 11400000, guid: 68a0237542604614fa1968a222be33c8, type: 2}
   - {fileID: 11400000, guid: aecc108348a67314ca8438571c3afd2b, type: 2}
   - {fileID: 11400000, guid: 21d3b0097343bde4ca89166f5bbd9a27, type: 2}
-  <_minMaxCanWaitTime>k__BackingField: {x: 30, y: 50}
+  <_minMaxCanWaitTime>k__BackingField: {x: 50, y: 80}
